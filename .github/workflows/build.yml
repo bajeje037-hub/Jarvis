@@ -1,5 +1,4 @@
 YAML
-name: "Crea Jarvis.exe e Jarvis.apk"
 
 on:
   workflow_dispatch:
