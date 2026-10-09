@@ -1,3 +1,4 @@
+YAML
 name: "Crea Jarvis.exe e Jarvis.apk"
 
 on:
@@ -11,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm ci || npm install
+      - run: npm install --no-lockfile
       - run: node build/build-exe.js
       - uses: actions/upload-artifact@v4
         with:
