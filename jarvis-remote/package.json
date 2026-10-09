@@ -1,0 +1,11 @@
+{
+  "name": "jarvis-remote",
+  "version": "1.0.0",
+  "description": "Telecomando web (PWA) per Jarvis: comanda Claude Code sul tuo Mac da telefono o PC",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/run.js"
+  }
+}

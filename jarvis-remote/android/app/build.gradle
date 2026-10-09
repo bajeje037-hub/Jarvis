@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'it.jarvis.remote'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'it.jarvis.remote'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    // Chiave di firma fissa: gli aggiornamenti si installano sopra la versione precedente.
+    // (È una chiave personale, non per Google Play. Tieni il repository privato.)
+    signingConfigs {
+        release {
+            storeFile rootProject.file('jarvis-release.keystore')
+            storePassword 'jarvis-remote'
+            keyAlias 'jarvis'
+            keyPassword 'jarvis-remote'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
